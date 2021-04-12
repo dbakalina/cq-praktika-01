@@ -13,7 +13,6 @@ void main(int argc, char* argv[])
 		if (strcmp(argv[i], "-p") == 0)
 		{
 			s = argv[i + 1];
-			//c = argv[i + 2];
 			break;
 		}
 	}
@@ -47,7 +46,7 @@ void main(int argc, char* argv[])
 	Dilation(erosion, "matmorf_struct_elem.txt").save(QString((s + "result\\Opening.png").c_str()));
 	Erosion(dilation, "matmorf_struct_elem.txt").save(QString((s + "result\\Closing.png").c_str()));
 	
-
+	//Матричные фильтры
 	Matrix(image, "", "matrix.txt").save(QString((s + "result\\Matrix.png").c_str()));
 	Matrix(image, "Blur").save(QString((s + "result\\Blur.png").c_str()));
 	Matrix(image, "Gauss").save(QString((s + "result\\Gauss.png").c_str()));
@@ -58,9 +57,9 @@ void main(int argc, char* argv[])
 	Matrix(image, "", "oper_sharr_y.txt"). save(QString((s + "result\\Oper_sharr_y.png").c_str()));
 	Matrix(image, "motion_blur").save(QString((s + "result\\Motion_blur.png").c_str()));
 	
-	//Не работает
-	//Lin_gist(image).save(QString((s + "result\\Lin_gist.png").c_str()));          
-	//Perfect_refl(image).save(QString((s + "result\\Perfect_refl.png").c_str()));
+
+	Lin_gist(image).save(QString((s + "result\\Lin_gist.png").c_str()));          
+	Perfect_refl(image).save(QString((s + "result\\Perfect_refl.png").c_str()));
 	
 }
    
